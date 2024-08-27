@@ -10,16 +10,8 @@ class AvgViewer : public QObject
 public:
     Q_PROPERTY(int name READ name WRITE setName NOTIFY nameChanged FINAL)
 
-    int name() {
-        return TestModel::calcAvg();
-    }
-    void setName(int val) {
-        emit nameChanged();
-    }
-
-    //Q_INVOKABLE void add();
-    //static int calcAvg();
-
+    int name();
+    void setName(int val);
 signals:
     void nameChanged();
 };

@@ -21,6 +21,7 @@ qt_add_qml_module(appuntitled2
         SOURCES testModel.cpp
         SOURCES avgViewer.h
         SOURCES m_data.h
+        SOURCES avgViewer.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
