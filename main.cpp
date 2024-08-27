@@ -7,11 +7,7 @@
 int main(int argc, char *argv[])
 {
 
-    //TestModel tm;
-    //AvgViewer av(tm);
     AvgViewer av;
-    //QScopedPointer<AvgViewer> av(new AvgViewer);
-
 
     qmlRegisterSingletonInstance(
         "AvgViewerModule", // Имя модуля
@@ -20,7 +16,6 @@ int main(int argc, char *argv[])
         "AvgViewer", // Определяет, как будет называться в QML, чтобы получить к нему доступ
         &av
         );
-
 
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
@@ -32,7 +27,7 @@ int main(int argc, char *argv[])
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection
         );
-    engine.loadFromModule("untitled3", "Main");
+    engine.loadFromModule("untitled2", "Main");
 
     return app.exec();
 }

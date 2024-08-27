@@ -3,7 +3,6 @@
 #include <QAbstractListModel>
 #include <QStringList>
 #include <qqmlintegration.h>
-#include <testModel.h>
 
 class AvgViewer : public QObject
 {

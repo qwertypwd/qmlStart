@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 //import TestModelModule
-import untitled3
+import untitled2
 
 Window {
     width: 360
