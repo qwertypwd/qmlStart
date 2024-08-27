@@ -1,5 +1,21 @@
 #include "testModel.h"
 
+/*
+std::vector<int>& getData() {
+    static std::vector<int> m_data;
+    return m_data;
+}
+
+int getN() {
+    static int n;
+    return n;
+}
+
+
+auto m_data = getData();
+auto n = getN();
+*/
+
 TestModel::TestModel(QObject *parent):
     QAbstractListModel(parent)
 {

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(untitled2 VERSION 0.1 LANGUAGES CXX)
+project(untitled3 VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -8,39 +8,39 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
-qt_add_executable(appuntitled2
+qt_add_executable(appuntitled3
     main.cpp
 )
 
-qt_add_qml_module(appuntitled2
-    URI untitled2
+qt_add_qml_module(appuntitled3
+    URI untitled3
     VERSION 1.0
     QML_FILES
         Main.qml
-        SOURCES testModel.h
-        SOURCES testModel.cpp
-        SOURCES avgViewer.h
-        SOURCES m_data.h
-        SOURCES avgViewer.cpp
+    SOURCES avgViewer.h
+    SOURCES
+    SOURCES avgViewer.cpp
+    SOURCES
+
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
-set_target_properties(appuntitled2 PROPERTIES
-#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appuntitled2
+set_target_properties(appuntitled3 PROPERTIES
+#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appuntitled3
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(appuntitled2
+target_link_libraries(appuntitled3
     PRIVATE Qt6::Quick
 )
 
 include(GNUInstallDirs)
-install(TARGETS appuntitled2
+install(TARGETS appuntitled3
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

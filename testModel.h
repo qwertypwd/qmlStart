@@ -3,16 +3,14 @@
 
 #include <QAbstractListModel>
 #include <QStringList>
-#include <m_data.h>
+#include <qqmlintegration.h>
+//#include <m_data.h>
 
 class TestModel : public QAbstractListModel
 {
     Q_OBJECT
-
-
+    QML_ELEMENT
 public:
-    friend class AvgViewer;
-
     enum Roles {
         TextRole = Qt::UserRole + 1,
         //AvgRole = Qt::UserRole + 2
@@ -27,15 +25,15 @@ public:
     virtual Qt::ItemFlags flags(const QModelIndex &index) const;
 
     Q_INVOKABLE void add(int val);
-    static double calcAvg();
+    double calcAvg();
 
 public slots:
     void onItemSend(QVariant val);
     void onNSend(QVariant val);
 
 private:
-    //QStringList m_data;
-    //int n;
+    std::vector<int> m_data;
+    int n;
     double avg;
 };
 #endif // TESTMODEL_H
