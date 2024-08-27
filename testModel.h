@@ -35,7 +35,6 @@ public slots:
 
 private:
     //QStringList m_data;
-
     //int n;
     double avg;
 };

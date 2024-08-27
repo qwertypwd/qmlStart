@@ -1,4 +1,3 @@
-#include <iostream>
 #include "testModel.h"
 
 TestModel::TestModel(QObject *parent):
@@ -95,12 +94,6 @@ Qt::ItemFlags TestModel::flags(const QModelIndex &index) const
 
 void TestModel::onItemSend(QVariant val)
 {
-    bool* validation = nullptr;
-    int itemVal = val.toInt(validation);
-
-    //TestModel::add();
-    //std::cout << validation;
-
     if(val.canConvert<int>()) {
         if (val.toInt() >= 1) {
             TestModel::add(val.toInt());
@@ -110,7 +103,7 @@ void TestModel::onItemSend(QVariant val)
 void TestModel::onNSend(QVariant val)
 {
     if(val.canConvert<int>()) {
-        if (val.toInt() >= 1) {
+        if (val.toInt() >= 1 and val.toInt() < m_data.size()) {
             n = val.toInt();
         }
     }
