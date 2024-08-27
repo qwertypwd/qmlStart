@@ -12,8 +12,6 @@ Window {
     }
     AvgViewer {
         id: avgViewer
-        //visible: false
-        //function avgUpd()
     }
     Column {
         anchors.margins: 10
@@ -22,7 +20,6 @@ Window {
 
         TextField {
             id: itemTf
-            //Layout.alignment: Qt.AlignHCenter
             placeholderText: "item"
             //validator: IntValidator {bottom: 0}
         }
@@ -69,9 +66,6 @@ Window {
 
                 Text {
                     id: avgRowText
-                    //required property TestModel msg
-                    //anchors.centerIn: parent
-                    //renderType: Text.NativeRendering
                     text: "avg"
                 }
 
@@ -107,7 +101,6 @@ Window {
 
                 Text {
                     //anchors.centerIn: parent
-                    renderType: Text.NativeRendering
                     text: model.text || "old"
                 }
             }
