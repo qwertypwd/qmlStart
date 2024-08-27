@@ -103,7 +103,7 @@ void TestModel::onItemSend(QVariant val)
 void TestModel::onNSend(QVariant val)
 {
     if(val.canConvert<int>()) {
-        if (val.toInt() >= 1 and val.toInt() < m_data.size()) {
+        if (val.toInt() >= 1 and val.toInt() <= m_data.size()) {
             n = val.toInt();
         }
     }
